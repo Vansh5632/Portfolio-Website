@@ -1,9 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
 import { ReactTyped } from 'react-typed';
-
 
 const AnimatedElement = ({ children, delay = 2 }) => {
   const [ref, inView] = useInView({
@@ -25,63 +22,8 @@ const AnimatedElement = ({ children, delay = 2 }) => {
 };
 
 const HeroSection = () => {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
   return (
     <div className="relative min-h-screen overflow-hidden bg-primary text-white flex items-center">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          background: {
-            color: {
-              value: 'transparent',
-            },
-          },
-          fpsLimit: 120,
-          interactivity: {
-            events: {
-              onClick: { enable: true, mode: 'push' },
-              onHover: { enable: true, mode: 'repulse' },
-              resize: true,
-            },
-            modes: {
-              push: { quantity: 4 },
-              repulse: { distance: 200, duration: 0.4 },
-            },
-          },
-          particles: {
-            color: { value: '#88D8B0' },
-            links: {
-              color: '#FF6F61',
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            move: {
-              direction: 'none',
-              enable: true,
-              outModes: { default: 'bounce' },
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: { enable: true, area: 800 },
-              value: 80,
-            },
-            opacity: { value: 0.5 },
-            shape: { type: 'circle' },
-            size: { value: { min: 1, max: 5 } },
-          },
-          detectRetina: true,
-        }}
-        className="absolute inset-0"
-      />
       <div className="relative z-10 flex w-full px-8 md:px-16 lg:px-24">
         <div className="flex flex-col justify-center w-full lg:w-1/2 space-y-4">
           <AnimatedElement>
@@ -116,7 +58,7 @@ const HeroSection = () => {
         <div className="hidden lg:flex lg:w-1/2 justify-center items-center">
           <AnimatedElement>
             <img
-              src='src\assets\image1.jpg' // Replace this URL with your actual image URL
+              src='src/assets/image1.jpg' // Replace this URL with your actual image URL
               alt="Sample"
               className="w-3/4 h-auto rounded-lg shadow-lg border-2 border-highlight"
             />
