@@ -58,7 +58,7 @@ const HeroSection = () => {
         <div className="hidden lg:flex lg:w-1/2 justify-center items-center">
           <AnimatedElement>
             <img
-              src='src/assets/image1.jpg' // Replace this URL with your actual image URL
+              src='/assets/image1.jpg' // Replace this URL with your actual image URL
               alt="Sample"
               className="w-3/4 h-auto rounded-lg shadow-lg border-2 border-highlight"
             />
