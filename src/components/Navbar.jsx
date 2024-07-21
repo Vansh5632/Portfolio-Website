@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
 
 const NavItem = ({ to, children, onClick }) => (
   <li className="relative group">
     <NavLink
       to={to}
-      className={({ isActive }) => 
-        `text-white group-hover:text-secondary transition-colors duration-300 ${isActive ? 'text-secondary' : ''}`
+      className={({ isActive }) =>
+        `text-white group-hover:text-secondary transition-colors duration-300 ${
+          isActive ? "text-secondary" : ""
+        }`
       }
       onClick={onClick}
     >
@@ -25,8 +27,14 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       <div className="flex justify-between items-center px-6 py-4">
-        <Link to="/" className="text-2xl font-bold text-white">Logo</Link>
-        
+        <div className="">
+          <img
+            src="src\assets\logo.svg"
+            alt="Logo"
+            className="object-contain w-full h-full"
+          />
+        </div>
+
         {/* Mobile menu button */}
         <button
           className="md:hidden text-white focus:outline-none"
@@ -47,10 +55,20 @@ const Navbar = () => {
 
         {/* Social Icons */}
         <div className="hidden md:flex gap-4 text-3xl text-white">
-          <a href="https://github.com/Vansh5632" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300">
+          <a
+            href="https://github.com/Vansh5632"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary transition-colors duration-300"
+          >
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/in/vansh-gilhotra-059762220/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300">
+          <a
+            href="https://www.linkedin.com/in/vansh-gilhotra-059762220/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-secondary transition-colors duration-300"
+          >
             <FaLinkedin />
           </a>
         </div>
@@ -60,16 +78,34 @@ const Navbar = () => {
       {isMenuOpen && (
         <nav className="md:hidden backdrop-blur-md bg-white/10 border border-secondary rounded-b-lg px-6 py-4">
           <ul className="flex flex-col gap-4 font-playfair font-bold">
-            <NavItem to="/" onClick={toggleMenu}>Home</NavItem>
-            <NavItem to="/about" onClick={toggleMenu}>About me</NavItem>
-            <NavItem to="/contact" onClick={toggleMenu}>Contact</NavItem>
-            <NavItem to="/projects" onClick={toggleMenu}>Projects</NavItem>
+            <NavItem to="/" onClick={toggleMenu}>
+              Home
+            </NavItem>
+            <NavItem to="/about" onClick={toggleMenu}>
+              About me
+            </NavItem>
+            <NavItem to="/contact" onClick={toggleMenu}>
+              Contact
+            </NavItem>
+            <NavItem to="/projects" onClick={toggleMenu}>
+              Projects
+            </NavItem>
           </ul>
           <div className="flex gap-4 text-3xl text-white mt-4">
-            <a href="https://github.com/Vansh5632" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300">
+            <a
+              href="https://github.com/Vansh5632"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-secondary transition-colors duration-300"
+            >
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/vansh-gilhotra-059762220/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors duration-300">
+            <a
+              href="https://www.linkedin.com/in/vansh-gilhotra-059762220/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-secondary transition-colors duration-300"
+            >
               <FaLinkedin />
             </a>
           </div>
@@ -77,6 +113,6 @@ const Navbar = () => {
       )}
     </div>
   );
-}
+};
 
 export default Navbar;

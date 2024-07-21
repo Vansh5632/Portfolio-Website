@@ -1,0 +1,37 @@
+<svg width="150" height="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#34495E;stop-opacity:1" />
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+       
+    <!-- Code brackets with inclination -->
+    <path d="M20 50 L40 30 L33.5 23.5 L6.5 50 L33.5 76.5 L40 70 Z" fill="#FFC107" filter="url(#glow)" transform="rotate(-15 20 50)"/>
+    <path d="M130 50 L110 30 L116.5 23.5 L143.5 50 L116.5 76.5 L110 70 Z" fill="#FFC107" filter="url(#glow)" transform="rotate(-15 130 50)"/>
+       
+    <!-- Name -->
+    <text
+      x="50%"
+      y="50%"
+      font-family="Brush Script MT, cursive"
+      font-size="16"
+      fill="#FFFFFF"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      filter="url(#glow)"
+    >
+      Vansh Gilhotra
+    </text>
+       
+    <!-- Web development icons -->
+    
+  </svg>
+  

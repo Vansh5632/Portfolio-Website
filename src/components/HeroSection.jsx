@@ -5,7 +5,7 @@ import { loadFull } from 'tsparticles';
 import { ReactTyped } from 'react-typed';
 
 
-const AnimatedElement = ({ children, delay = 0 }) => {
+const AnimatedElement = ({ children, delay = 2 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -108,8 +108,8 @@ const HeroSection = () => {
             </p>
           </AnimatedElement>
           <AnimatedElement delay={600}>
-            <button className="bg-accent hover:bg-opacity-80 text-primary font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105 hover:shadow-lg mt-8">
-              View My Work
+            <button className="bg-accent hover:bg-opacity-80 text-primary font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105 hover:shadow-lg mt-7">
+              <a href="/projects">View my Work</a>
             </button>
           </AnimatedElement>
         </div>
