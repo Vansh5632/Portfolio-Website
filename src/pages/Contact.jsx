@@ -24,7 +24,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/send-email', formData);
+      const response = await axios.post('https://emailer-agh3.onrender.com/send-email', formData);
       if (response.status === 200) {
         setFormStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' }); // Clear form
