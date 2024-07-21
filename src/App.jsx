@@ -1,13 +1,25 @@
 import React from 'react'
-import HeroSection from './components/HeroSection'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-
+import AboutMe from './pages/AboutMe'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div>
-      <Home/>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            {/* Add more routes here as needed */}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
